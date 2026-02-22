@@ -1,3 +1,5 @@
+alert(JS Connected)
+
 /* =========================================================
    ToolNest – script.js
    All tool logic: Percentage, CGPA, Age, Word Counter,
