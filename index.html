@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToolNest – Smart Daily Tools</title>
+
+    <meta name="description"
+      content="ToolNest is a free online website offering useful daily tools like calculator, converter and more. Fast, simple and easy to use.">
+
+    <meta name="keywords" content="ToolNest, online tools, calculator, converter, daily use tools, free tools">
+
+    <meta name="author" content="ToolNest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -27,7 +39,7 @@
   <section class="hero">
     <div class="hero-blob blob1"></div>
     <div class="hero-blob blob2"></div>
-    <h1 class="hero-title">Your all-in-one<br/><span class="hero-accent">student toolkit</span></h1>
+    <h1 class="hero-title">Your all-in-one<br /><span class="hero-accent">student toolkit</span></h1>
     <p class="hero-desc">Free, fast, no sign-up required. Built for students &amp; creators.</p>
     <a href="#tools" class="hero-btn">Explore Tools ↓</a>
   </section>
@@ -161,7 +173,8 @@
   <!-- 4: WORD COUNTER -->
   <template id="tpl-wordcount">
     <h2 class="modal-title">✍️ Word Counter</h2>
-    <textarea id="wc-textarea" placeholder="Paste or type your text here…" rows="9" oninput="updateWordCount()"></textarea>
+    <textarea id="wc-textarea" placeholder="Paste or type your text here…" rows="9"
+      oninput="updateWordCount()"></textarea>
     <div class="wc-stats" id="wc-stats">
       <div class="stat-chip"><span id="wc-words">0</span><small>Words</small></div>
       <div class="stat-chip"><span id="wc-chars">0</span><small>Chars</small></div>
@@ -170,7 +183,8 @@
       <div class="stat-chip"><span id="wc-paragraphs">0</span><small>Paragraphs</small></div>
       <div class="stat-chip"><span id="wc-read-time">0 min</span><small>Read Time</small></div>
     </div>
-    <button class="outline-btn" onclick="document.getElementById('wc-textarea').value='';updateWordCount()">Clear</button>
+    <button class="outline-btn"
+      onclick="document.getElementById('wc-textarea').value='';updateWordCount()">Clear</button>
   </template>
 
   <!-- 5: WHATSAPP -->
@@ -217,4 +231,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
