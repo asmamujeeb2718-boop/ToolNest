@@ -54,7 +54,7 @@
         <div class="card-icon">%</div>
         <h3>Percentage Calculator</h3>
         <p>Find percentages, marks obtained, and percentage change instantly.</p>
-       <a href="percentage-calculator.html" class="open-tool-btn">Open Tool</a>
+       <button class="open-tool-btn" onclick="openTool('percentage')">Open Tool →</button>
       </div>
 
       <!-- Card 2: CGPA Calculator -->
@@ -109,7 +109,32 @@
   </div>
 
   <!-- TOOL TEMPLATES (hidden) -->
-
+  <template id="tpl-percentage">
+  <h2 class="modal-title">% Percentage Calculator</h2>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="pctTab(this,'basic')">Basic %</button>
+      <button class="tab-btn" onclick="pctTab(this,'marks')">Marks %</button>
+      <button class="tab-btn" onclick="pctTab(this,'change')">% Change</button>
+    </div>
+    <div id="pct-basic" class="tab-pane active">
+      <label>What is <input type="number" id="pct-val" placeholder="e.g. 25" />% of</label>
+      <label><input type="number" id="pct-of" placeholder="e.g. 200" /></label>
+      <button class="calc-btn" onclick="calcBasicPct()">Calculate</button>
+      <div class="result-box" id="pct-basic-result"></div>
+    </div>
+    <div id="pct-marks" class="tab-pane">
+      <label>Marks Obtained <input type="number" id="marks-obt" placeholder="e.g. 450" /></label>
+      <label>Total Marks <input type="number" id="marks-total" placeholder="e.g. 600" /></label>
+      <button class="calc-btn" onclick="calcMarksPct()">Calculate</button>
+      <div class="result-box" id="pct-marks-result"></div>
+    </div>
+    <div id="pct-change" class="tab-pane">
+      <label>Original Value <input type="number" id="pct-orig" placeholder="e.g. 500" /></label>
+      <label>New Value <input type="number" id="pct-new" placeholder="e.g. 650" /></label>
+      <button class="calc-btn" onclick="calcPctChange()">Calculate</button>
+      <div class="result-box" id="pct-change-result"></div>
+    </div>
+    </template>
   
   <!-- 2: CGPA -->
   <template id="tpl-cgpa">
