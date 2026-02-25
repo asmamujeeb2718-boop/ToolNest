@@ -372,3 +372,62 @@ function copyStyle(btn, text) {
     setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
   });
 }
+
+// QR CODE
+function generateQR() {
+  let text = document.getElementById("qr-input").value;
+  let qrImg = document.getElementById("qr-img");
+  qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(text);
+}
+
+// PASSWORD
+function generatePassword() {
+  let length = document.getElementById("pass-length").value;
+  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  document.getElementById("pass-result").innerText = password;
+}
+
+// JPG TO PNG
+function convertToPNG() {
+  let file = document.getElementById("jpg-input").files[0];
+  let canvas = document.createElement("canvas");
+  let ctx = canvas.getContext("2d");
+  let img = new Image();
+
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+    let pngUrl = canvas.toDataURL("image/png");
+    document.getElementById("png-download").href = pngUrl;
+  };
+
+  img.src = URL.createObjectURL(file);
+}
+
+// RESIZER
+function resizeImage() {
+  let file = document.getElementById("resize-input").files[0];
+  let width = document.getElementById("resize-width").value;
+  let height = document.getElementById("resize-height").value;
+
+  let canvas = document.createElement("canvas");
+  let ctx = canvas.getContext("2d");
+  let img = new Image();
+
+  img.onload = function() {
+    canvas.width = width;
+    canvas.height = height;
+    ctx.drawImage(img, 0, 0, width, height);
+    let resizedUrl = canvas.toDataURL("image/png");
+    document.getElementById("resize-download").href = resizedUrl;
+  };
+
+  img.src = URL.createObjectURL(file);
+}

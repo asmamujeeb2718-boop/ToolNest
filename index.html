@@ -19,6 +19,8 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
@@ -96,6 +98,38 @@
         <p>Convert plain text into 10+ cool Unicode font styles for bios & captions.</p>
         <button class="open-tool-btn" onclick="openTool('stylishtext')">Open Tool →</button>
       </div>
+     
+      <!-- Card 7: QR Code -->
+    <div class="tool-card" data-tool="qrcode">
+    <div class="card-icon">🔳</div>
+    <h3>QR Code Generator</h3>
+    <p>Create QR codes instantly for any text or link.</p>
+    <button class="open-tool-btn" onclick="openTool('qrcode')">Open Tool →</button>
+</div>
+
+      <!-- Card 8: Password Generater -->
+<div class="tool-card" data-tool="password">
+    <div class="card-icon">🔐</div>
+    <h3>Password Generator</h3>
+    <p>Generate strong and secure random passwords.</p>
+    <button class="open-tool-btn" onclick="openTool('password')">Open Tool →</button>
+</div>
+
+      <!-- Card 9: JPG to PNG Convertor -->
+<div class="tool-card" data-tool="jpgpng">
+    <div class="card-icon">🖼️</div>
+    <h3>JPG to PNG Converter</h3>
+    <p>Convert JPG images to PNG format easily.</p>
+    <button class="open-tool-btn" onclick="openTool('jpgpng')">Open Tool →</button>
+</div>
+
+     <!-- Card 10: Resizer -->
+<div class="tool-card" data-tool="resizer">
+    <div class="card-icon">📏</div>
+    <h3>Image Resizer</h3>
+    <p>Resize images quickly without losing quality.</p>
+    <button class="open-tool-btn" onclick="openTool('resizer')">Open Tool →</button>
+</div>
 
     </div>
   </section>
@@ -220,6 +254,76 @@
       <p class="st-hint">Start typing above to see styles ↑</p>
     </div>
   </template>
+
+  <!-- 7:QR Code -->
+  <template id="tpl-qrcode">
+    <div class="tool-ui">
+  <h2 class="modal-title">🔳 QR Code Generator</h2>
+
+  <label>Enter Text or URL</label>
+  <input type="text" id="qr-input" placeholder="Enter text or link">
+
+  <button class="calc-btn" onclick="generateQR()">Generate QR →</button>
+
+  <div class="tool-result">
+    <img id="qr-img" style="margin-top:15px;">
+  </div>
+
+  </div>
+</template>
+
+<!-- 8:Password Generater -->
+<template id="tpl-password">
+  <div class="tool-ui">
+  <h2 class="modal-title">🔐 Password Generator</h2>
+
+  <label>Password Length</label>
+  <input type="number" id="pass-length" value="8">
+
+  <button class="calc-btn" onclick="generatePassword()">Generate Password →</button>
+
+  <div class="tool-result" id="pass-result"></div>
+
+  </div>
+</template>
+
+ <!-- 9:JPG to PNG Converter -->
+ <template id="tpl-jpgpng">
+  <div class="tool-ui">
+  <h2 class="modal-title"> 🖼️ JPG to PNG Converter</h2>
+
+  <input type="file" id="jpg-input" accept="image/jpeg">
+
+  <button class="calc-btn" onclick="convertToPNG()">Convert →</button>
+
+  <div class="tool-result">
+    <a id="png-download" download="converted.png">Download PNG</a>
+  </div>
+
+  </div>
+</template>
+
+  <!-- 10:Resizer -->
+<template id="tpl-resizer">
+  <div class="tool-ui">
+  <h2 class="modal-title"> 📏 Image Resizer</h2>
+
+  <input type="file" id="resize-input" accept="image/*">
+
+  <label>Width</label>
+  <input type="number" id="resize-width">
+
+  <label>Height</label>
+  <input type="number" id="resize-height">
+
+  <button class="calc-btn" onclick="resizeImage()">Resize →</button>
+
+  <div class="tool-result">
+    <a id="resize-download" download="resized.png">Download Image</a>
+  </div>
+
+  </div>
+</template>
 
   <!-- FOOTER -->
   <footer class="site-footer">
